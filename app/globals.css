@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fefefe;
+  --foreground: #171717;
+  --font-white: #fafafa;
+  --font-white-3: rgba(255, 255, 255, 0.6);
+  --font-black: #252525;
+  --font-black-5: #505050;
+  --font-gray: rgba(210,210,215, 64%);
+  --font-gray-3: rgba(210,210,215, 94%);
+  --red: #c50f0f;
+  --green: #0ed42f;
+}
+
+:root {
+  --poppins: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: var(--poppins);
+  background-color: rgb(21,114,254);
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e1e1ff27 10px ), repeating-linear-gradient( #444cf755, rgb(21,114,254) );
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --poppins: 'Poppins', sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  min-width: 100vw;
+  height: 100vh;
+}
+.textSection {
+  flex: 1;
+  padding: 30px;
+  min-width: 60%;
+}
+.title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-family: var(--poppins);
+  color: var(--font-white);
+  font-weight: 600;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+.button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  gap:5px;
+  align-items: center;
+  border-radius: 12px;
+  background-color: rgba(252, 253, 255, 35%);
+  backdrop-filter: blur(20px);
+  color: var(--font-white);
+  transition: 0.2s all ease-in-out;
+  font-weight: 500;
+  border: 2px solid #fff;
+}
+.button:hover {
+  background-color: rgba(92, 143, 255, 0.842);
+  scale: 1.1;
+}
+
+.buttonHistorico{
+  margin-top: 20px;
+  color: var(--font-white-3)
+}
+.button .iconButtom {
+  height: 20px;
+  width: auto;
+}
+.imageSection {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(252, 253, 255, 65%);
+  backdrop-filter: blur(20px);
+  border-radius: 20px 0px 0px 20px;
+  overflow: hidden;
+  border: 4px solid var(--background);
+  border-right: none;
+}
+.catImage {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalContent {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 80%;
+  text-align: center;
+}
+.voteHistory {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+  max-height: 300px;
+  overflow: auto;
+}
+.voteItem {
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+}
+.historyImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.liked {
+  border: 2px solid var(--green);
+  border-radius: 12px;
+}
+.disliked {
+  border: 2px solid var(--red);
+  border-radius: 12px;
+}
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5px;
+  background-color: var(--font-gray);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.closeButton .closeIconButton{
+  width: 10px;
+  height: auto;
+}
+.closeButton:hover {
+  background-color: var(--font-gray-3);
+}
+
+.loadingIcon{
+  position: absolute;
+  width: auto;
+  height: 30px;
+  animation: rodandu 1s linear infinite;
+
+}
+@keyframes rodandu {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    min-width: 100vw;
+    height: 100vh;
+  }
+
+  .imageSection{
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    width: 100%;
+    background-color: rgba(252, 253, 255, 65%);
+    backdrop-filter: blur(20px);
+    border-radius: 20px 20px 0px 0px;
+    border: 4px solid var(--background);
+  }
+
+  .textSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .voteHistory {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+    max-height: 600px;
+    overflow: auto;
+  }
+}
